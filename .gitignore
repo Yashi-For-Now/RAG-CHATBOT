@@ -1,0 +1,17 @@
+#python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+#upload
+backend/uploads/
+
+#node
+node_modules/
+.next/
+
+#OS
+Thumbs.db
+Desktop.ini
