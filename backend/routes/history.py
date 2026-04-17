@@ -30,6 +30,6 @@ def get_history(session_id: str, db: Session = Depends(get_db)):
         .all()
 
     if not records:
-        raise HTTPException(status_code=404, detail=f"no history found for session '{session_id}'")
+        raise HTTPException(status_code=404, detail=f"No history found for session '{session_id}'")
 
     return records
