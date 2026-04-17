@@ -1,8 +1,11 @@
 import os
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
+from sqlalchemy.orm import Session
 from services.vector_store import get_retriever
 from services.llm import get_answer_from_gemini
+from db.database import get_db
+from db.models import ChatHistory
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -25,7 +28,7 @@ class ChatResponse(BaseModel):
     sources: list[SourceChunk]
 
 @router.post("/chat", response_model=ChatResponse)
-async def chat(request: ChatRequest):
+async def chat(request: ChatRequest, db: Session = Depends(get_db)):
 
     #validation
     if not request.question.strip():
@@ -54,6 +57,16 @@ async def chat(request: ChatRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to get answer from Gemini: {str(e)}")
 
+    #saving QnA to DB
+    chat_record=ChatHistory(
+        session_id=request.session_id,
+        question=request.question,
+        answer=answer
+    )
+    db.add(chat_record)
+    db.commit()
+
+    
     sources=[]
 
     for chunk in relevant_chunks:
