@@ -3,7 +3,7 @@ import { useApp } from "../context/AppContext";
 import { uploadPDF } from "../services/api";
 
 export default function FileUplaod() {
-  const { sessionId, setDocumentUplaoded, setFilename } = useApp();
+  const { sessionId, setDocumentUploaded, setFileName } = useApp();
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
   const [dragOver, setDragOver] = useState(false);
@@ -19,11 +19,20 @@ export default function FileUplaod() {
     setError("");
 
     try {
-      await uploadPDF(file, sessionId);
-      setFilename(file.name);
-      setDocumentUplaoded(true);
+      const response = await uploadPDF(file, sessionId);
+      //Debug
+      // console.log("Upload response: ", response);
+      // console.log("Session ID: ", sessionId);
+      //Debug
+
+      setFileName(file.name);
+      setDocumentUploaded(true);
     } catch (err) {
-      setError("Uplaod failed. Please try again.");
+      //Debug
+      // console.log("Upload error: ", err);
+      // console.log("Error response: ", err.response);
+      //Debug
+      setError("Upload failed. Please try again.");
     } finally {
       setUploading(false);
     }
@@ -70,7 +79,7 @@ export default function FileUplaod() {
           <div className=" text-5x1 mb-4">📃</div>
           {uploading ? (
             <div className="text-blue-400 text-lg font-medium">
-              Uplaoding and processing....
+              Uploading and processing....
             </div>
           ) : (
             <>

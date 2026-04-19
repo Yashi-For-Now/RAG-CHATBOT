@@ -4,7 +4,13 @@ const AppContext = createContext();
 
 export function AppProvider({ children }) {
   // Generate a unique session ID once when app loads
-  const [sessionId] = useState(() => crypto.randomUUID());
+  const [sessionId] = useState(() => {
+    const id = crypto.randomUUID();
+    //debug
+    // console.log("Session ID genereated: ", id);
+    return id;
+    //debug
+  });
 
   // Whether a document has been uploaded for this session
   const [documentUploaded, setDocumentUploaded] = useState(false);

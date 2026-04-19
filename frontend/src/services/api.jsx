@@ -10,9 +10,9 @@ const api = axios.create({ baseURL: Base_URL });
 export const uploadPDF = async (file, sessionId) => {
   const formData = new FormData();
   formData.append("file", file);
-  formData.append("session_id", sessionId);
+  // formData.append("session_id", sessionId);
 
-  const response = await api.post("/upload", formData, {
+  const response = await api.post(`/upload?session_id=${sessionId}`, formData, {
     headers: { "Content-Type": "multipart/form-data" },
   });
   return response.data;
