@@ -101,7 +101,9 @@ export default function FileUplaod() {
         {error && (
           <p className="text-red-400 text-sm text-center mt-4">{error}</p>
         )}
-        <p className="text-gray-600 text-xs text-center mt-6"></p>
+        <p className="text-gray-600 text-xs text-center mt-6">
+          To switch documents, use the Clear button in the chat header first
+        </p>
       </div>
     </div>
   );
