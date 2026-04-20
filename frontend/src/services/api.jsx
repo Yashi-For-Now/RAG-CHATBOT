@@ -29,7 +29,7 @@ export const sendMessage = async (question, sessionId) => {
 //get chat history for a session
 
 export const getHistory = async (sessionId) => {
-  const response = await api.get("/history/${sessionId}");
+  const response = await api.get(`/history/${sessionId}`);
 
   return response.data;
 };
@@ -37,7 +37,7 @@ export const getHistory = async (sessionId) => {
 // session status
 
 export const getSessionStatus = async (sessionId) => {
-  const response = await api.get("/session/${sessionId}");
+  const response = await api.get(`/session/${sessionId}`);
 
   return response.data;
 };
@@ -45,7 +45,7 @@ export const getSessionStatus = async (sessionId) => {
 //delete session
 
 export const deleteSession = async (sessionId) => {
-  const response = await api.delete("/session/${sessionId}");
+  const response = await api.delete(`/session/${sessionId}`);
 
   return response.data;
 };

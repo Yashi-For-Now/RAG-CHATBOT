@@ -17,7 +17,7 @@ class HistoryItem(BaseModel):
         from_attributes= True #allow pydantic to read SQLAlchemy objects
 
 
-@router.get("history/{session_id}", response_model=list[HistoryItem])
+@router.get("/history/{session_id}", response_model=list[HistoryItem])
 def get_history(session_id: str, db: Session = Depends(get_db)):
     """
     Return all chat history for a given session_id

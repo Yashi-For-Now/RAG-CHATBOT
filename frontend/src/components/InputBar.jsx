@@ -10,6 +10,7 @@ export default function InputBar() {
     const question = input.trim();
     if (!question || isLoading) return;
 
+    // console.log("Sending with session ID:", sessionId);
     //Add user message immediately
     addMessage("user", question);
     setInput("");

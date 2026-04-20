@@ -2,6 +2,7 @@ import { useApp } from "./context/AppContext";
 import FileUpload from "./components/FileUpload";
 import ChatWindow from "./components/ChatWindow";
 import InputBar from "./components/InputBar";
+import Header from "./components/Header";
 
 function App() {
   const { documentUploaded } = useApp();
@@ -11,6 +12,7 @@ function App() {
       {documentUploaded ? (
         // Chat Window
         <>
+          <Header />
           <ChatWindow />
           <InputBar />
         </>
