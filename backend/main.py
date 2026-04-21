@@ -17,8 +17,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173", 
-        "https://*netlify.app", 
-        "https://rag-chatbot-backend-h6j1.onrender.com"],
+        "https://rag-chatbot-fr.netlify.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
