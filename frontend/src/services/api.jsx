@@ -1,9 +1,9 @@
 import axios from "axios";
 
 // base URL of FastAPI backend
-const Base_URL = "http://localhost:8000/api";
+const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 
-const api = axios.create({ baseURL: Base_URL });
+const api = axios.create({ baseURL: BASE_URL });
 
 //Upload a pdf file for a session
 
