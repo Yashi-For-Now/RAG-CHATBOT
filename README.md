@@ -60,7 +60,7 @@ RAG (Retrieval Augmented Generation) is an AI architecture that grounds language
 | Netlify  | Frontend hosting    |
 | Supabase | PostgreSQL database |
 ---
-
+</>Markdown
 ## Architecture
 
 User uploads PDF
@@ -85,6 +85,7 @@ Gemini generates grounded answer
 Answer + source citations returned to user
 ↓
 Q&A saved to PostgreSQL
+
 ---
 
 ## API Endpoints
