@@ -15,7 +15,10 @@ app= FastAPI(title="RAG Chatbot API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173", 
+        "https://*netlify.app", 
+        "https://rag-chatbot-backend-h6j1.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
