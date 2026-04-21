@@ -3,7 +3,6 @@
 A fullstack AI-powered web application that lets users upload any PDF document and have an intelligent conversation with it. Built with a complete RAG (Retrieval Augmented Generation) pipeline.
 
 🔗 **Live Demo:** [rag-chatbot-fr.netlify.app](https://rag-chatbot-fr.netlify.app)
-
 ---
 
 ## What is RAG?
@@ -14,7 +13,7 @@ RAG (Retrieval Augmented Generation) is an AI architecture that grounds language
 2. Finds the most relevant sections for each question
 3. Generates an answer grounded strictly in those sections
 4. Returns the source citations so you can verify
-
+   
 ---
 
 ## Features
@@ -26,7 +25,7 @@ RAG (Retrieval Augmented Generation) is an AI architecture that grounds language
 - 🕒 Full chat history saved per session
 - 🔄 Session persistence across page refreshes
 - 🗑️ Clear session to start fresh with a new document
-
+  
 ---
 
 ## Tech Stack
@@ -59,7 +58,6 @@ RAG (Retrieval Augmented Generation) is an AI architecture that grounds language
 | Render   | Backend hosting     |
 | Netlify  | Frontend hosting    |
 | Supabase | PostgreSQL database |
-
 ---
 
 ## Architecture
@@ -86,7 +84,6 @@ Gemini generates grounded answer
 Answer + source citations returned to user
 ↓
 Q&A saved to PostgreSQL
-
 ---
 
 ## API Endpoints
@@ -99,7 +96,6 @@ Q&A saved to PostgreSQL
 | GET    | `/api/history/{session_id}` | Fetch chat history                    |
 | GET    | `/api/session/{session_id}` | Get session status                    |
 | DELETE | `/api/session/{session_id}` | Clear session data                    |
-
 ---
 
 ## Local Setup
@@ -147,7 +143,6 @@ echo "VITE_API_URL=http://localhost:8000/api" > .env
 # Run the dev server
 npm run dev
 ```
-
 ### Environment Variables
 
 Create `backend/.env`:
@@ -156,7 +151,6 @@ DATABASE_URL=your_postgresql_connection_string
 
 Create `frontend/.env`:
 VITE_API_URL="http://localhost:8000/api"
-
 ---
 
 ## Project Structure
@@ -191,7 +185,6 @@ RAG Chatbot WebAPP/
 │ └── AppContext.jsx
 └── services/
 └── api.js
-
 ---
 
 ## Key Implementation Decisions
@@ -213,7 +206,7 @@ RAG Chatbot WebAPP/
 - Streaming responses for faster perceived performance
 - Multiple documents per session
 - Dark/light mode toggle
-
+  
 ---
 
 ## Author
