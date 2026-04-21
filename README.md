@@ -3,6 +3,7 @@
 A fullstack AI-powered web application that lets users upload any PDF document and have an intelligent conversation with it. Built with a complete RAG (Retrieval Augmented Generation) pipeline.
 
 🔗 **Live Demo:** [rag-chatbot-fr.netlify.app](https://rag-chatbot-fr.netlify.app)
+
 ---
 
 ## What is RAG?
