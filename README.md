@@ -60,9 +60,8 @@ RAG (Retrieval Augmented Generation) is an AI architecture that grounds language
 | Netlify  | Frontend hosting    |
 | Supabase | PostgreSQL database |
 ---
-</>Markdown
+```
 ## Architecture
-
 User uploads PDF
 ↓
 PyMuPDF extracts text
@@ -85,7 +84,7 @@ Gemini generates grounded answer
 Answer + source citations returned to user
 ↓
 Q&A saved to PostgreSQL
-
+```
 ---
 
 ## API Endpoints
@@ -148,15 +147,16 @@ npm run dev
 ### Environment Variables
 
 Create `backend/.env`:
+```
 GEMINI_API_KEY=your_gemini_api_key
 DATABASE_URL=your_postgresql_connection_string
-
+```
 Create `frontend/.env`:
 VITE_API_URL="http://localhost:8000/api"
 ---
 
 ## Project Structure
-
+```
 RAG Chatbot WebAPP/
 ├── backend/
 │ ├── main.py
@@ -187,6 +187,7 @@ RAG Chatbot WebAPP/
 │ └── AppContext.jsx
 └── services/
 └── api.js
+```
 ---
 
 ## Key Implementation Decisions
