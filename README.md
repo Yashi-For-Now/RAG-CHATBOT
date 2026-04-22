@@ -220,5 +220,5 @@ RAG Chatbot WebAPP/
 **Yashashwani Singh**
 
 - GitHub: [@Yashi-For-Now](https://github.com/Yashi-For-Now)
-- LinkedIn: [Yashashwani Singh](www.linkedin.com/in/yashashwani-singh-999016209)
+- LinkedIn: [Yashashwani Singh](https://www.linkedin.com/in/yashashwani-singh-999016209/)
 - Email: s.yashashwani0.02@gmail.com
